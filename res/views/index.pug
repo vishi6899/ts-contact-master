@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    title="Contacts App"
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
+  body.bg-dark.text-center
+    .card.bg-dark.text-white.mx-auto(style="width: 1000px")
+      .card-body
+        h5.card-title="My Contacts"
+        h6.card-subtitle.mb-2.text-muted="Typescript Contacts App"
+        table.table.table-bordered.text-white
+          thead
+            tr
+              th="ID"
+              th="First Name"
+              th="Last Name"
+              th="Phone"
+              th="Email"
+              th="X"
+          tbody
+            each contact in contacts
+              tr
+                td=contact.id
+                td=contact.firstname
+                td=contact.lastname
+                td=contact.phone
+                td=contact.email
+                td
+                  form(id=`del${contact.id}` method="post" action=`/${contact.id}/delete`)
+                    button.btn.btn-danger(type="submit")="X"
+            tr
+              td(colspan=6)
+                form.form-inline(action="/" method="post")
+                  input.form-control.mb-2.mr-sm-2#firstname(type="text" name="firstname" placeholder="Firstname" required)
+                  input.form-control.mb-2.mr-sm-2#lastname(type="text" name="lastname" placeholder="Lastname" required)
+                  input.form-control.mb-2.mr-sm-2#phone(type="text" name="phone" placeholder="Phone" required)
+                  input.form-control.mb-2.mr-sm-2#email(type="email" name="email" placeholder="Email" required)
+                  button.btn.btn-primary.mb-2.mr-sm-2(type="submit")="Add Contact"
+
+
