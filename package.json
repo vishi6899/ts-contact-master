@@ -1,0 +1,33 @@
+{
+  "name": "ts-workshop-hands-on",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/koa": "^2.11.2",
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@koa/router": "^8.0.8",
+    "cookies": "^0.8.0",
+    "keygrip": "^1.1.0",
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-cookie": "^1.0.0",
+    "koa-cookies": "^2.0.4",
+    "koa-pug": "^4.0.3",
+    "koa-session": "^5.13.1",
+    "koa-session-ts": "^0.2.3",
+    "lowdb": "^1.0.0",
+    "pug": "^2.0.4"
+  }
+}
